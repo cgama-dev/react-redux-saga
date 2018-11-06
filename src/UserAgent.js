@@ -2,21 +2,23 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 
-import { loadDataUARequest } from './actions'
+import { loadDataUARequest } from './redux/actions'
 
 class UserAgent extends Component {
 
     render() {
         return (
-            <div>
-                Olá UA,
-                <br/>
-                {this.props.data}
-                <br/>
-                <br/>
-                <button type="button" onClick={() => this.props.loadData()}>Click UA</button>
-                
-
+            <div className="container">
+                <button className="btn btn-success" type="button" onClick={() => this.props.loadData()}>Meu Navegador</button>
+                <br />
+                <br />
+                {
+                    this.props.data.length !== 0 &&
+                    <div className="alert alert-primary" role="alert">
+                        {this.props.data}
+                    </div>
+                }
+                <br />
             </div>
         )
     }

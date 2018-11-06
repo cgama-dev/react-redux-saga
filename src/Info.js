@@ -2,25 +2,24 @@ import React, { Component } from 'react'
 
 import { connect } from 'react-redux'
 
-import { loadDataRequest } from './actions'
+import { loadDataRequest } from './redux/actions'
 
 class Info extends Component {
 
-    teste =()=> {
-        console.log('teste')
-    }
-
     render() {
         return (
-            <div>
-                Olá INFO,
-                <br/>
-                {this.props.data}
+            <div className="container">
                 <br/>
                 <br/>
-                <button type="button" onClick={() => this.props.loadData()}>Click me</button>
-                
-
+                <button className="btn btn-primary" type="button" onClick={() => this.props.loadData()}>MEU IP</button>
+                <br/>
+                <br/>
+                {
+                    this.props.data.length !== 0 &&
+                    <div className="alert alert-primary" role="alert">
+                        {this.props.data}
+                    </div>
+                }
             </div>
         )
     }
