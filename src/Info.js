@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-
+//teste
 import { connect } from 'react-redux'
 
 import { loadDataRequest } from './redux/actions'
