@@ -20,6 +20,7 @@ class App extends Component {
               <Info />
               <br/>
               <br/>
+	      <br/>
               <UserAgent />
             </div>
           </div>
